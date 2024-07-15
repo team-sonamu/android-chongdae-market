@@ -18,6 +18,9 @@
         android:usesCleartextTraffic="true"
         tools:targetApi="31">
         <activity
+            android:name=".presentation.view.detail.ArticleDetailActivity"
+            android:exported="false" />
+        <activity
             android:name=".presentation.view.MainActivity"
             android:exported="true">
             <intent-filter>

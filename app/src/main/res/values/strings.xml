@@ -1,3 +1,7 @@
 <resources>
     <string name="app_name">Chongdae</string>
+    <string name="money_amount">%,d원</string>
+    <string name="total_price">(총 가격 %,d원)</string>
+    <string name="due_datetime">MM월 dd일 HH시</string>
+    <string name="participant_count">참여하기(%d/%d)</string>
 </resources>
