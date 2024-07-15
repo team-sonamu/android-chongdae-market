@@ -4,6 +4,6 @@ import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
 @Serializable
-class ParticipateGroupRequest(
-    @SerialName("groupPurchaseId") val groupPurchaseId: Long,
+class ParticipationsRequest(
+    @SerialName("articleId") val articleId: Long,
 )
