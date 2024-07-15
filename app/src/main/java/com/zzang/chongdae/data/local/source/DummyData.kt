@@ -14,6 +14,7 @@ val articlesDummyData =
             1000,
             3,
             1,
+            true,
         ),
         Article(
             0,
@@ -24,6 +25,7 @@ val articlesDummyData =
             1000,
             3,
             1,
+            true,
         ),
         Article(
             0,
@@ -34,6 +36,7 @@ val articlesDummyData =
             1000,
             3,
             1,
+            false,
         ),
         Article(
             0,
@@ -44,6 +47,7 @@ val articlesDummyData =
             1000,
             3,
             1,
+            false,
         ),
         Article(
             0,
@@ -54,6 +58,7 @@ val articlesDummyData =
             1000,
             3,
             1,
+            true,
         ),
         Article(
             0,
@@ -64,5 +69,6 @@ val articlesDummyData =
             1000,
             3,
             1,
+            false,
         ),
     )

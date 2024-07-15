@@ -11,4 +11,5 @@ data class Article(
     val splitPrice: Int,
     val totalCount: Int,
     val currentCount: Int,
+    val isOpened: Boolean,
 )

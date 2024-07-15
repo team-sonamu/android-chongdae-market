@@ -1,0 +1,184 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <data>
+
+        <variable
+            name="article"
+            type="com.zzang.chongdae.domain.model.Article" />
+
+        <variable
+            name="onArticleClickListener"
+            type="com.zzang.chongdae.presentation.view.home.adapter.OnArticleClickListener" />
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="140dp"
+        android:padding="12dp">
+
+        <ImageView
+            android:id="@+id/iv_product"
+            android:layout_width="110dp"
+            android:layout_height="110dp"
+            app:imageUrl="@{article.thumbnailUrl}"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:src="@drawable/ic_launcher_background" />
+
+        <TextView
+            android:id="@+id/tv_deadline_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="18dp"
+            android:text="모집 마감: "
+            android:textColor="#2EBC93"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@+id/iv_product"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tv_deadline_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textColor="#2EBC93"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:formattedDate="@{article.deadline}"
+            app:layout_constraintStart_toEndOf="@+id/tv_deadline_label"
+            app:layout_constraintTop_toTopOf="parent"
+            tools:text="OO월 OO일 OO시" />
+
+        <TextView
+            android:id="@+id/tv_title"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{article.title}"
+            android:textColor="@color/black"
+            android:textSize="16sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/tv_deadline_label"
+            app:layout_constraintTop_toBottomOf="@+id/tv_deadline_label"
+            tools:text="제목" />
+
+        <TextView
+            android:id="@+id/tv_metting_address"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{article.meetingAddress}"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            app:layout_constraintStart_toStartOf="@id/tv_deadline_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_title"
+            tools:text="OOO동" />
+
+        <TextView
+            android:id="@+id/tv_split_price_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="엔빵 가격: "
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toStartOf="@id/tv_deadline_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_metting_address" />
+
+        <TextView
+            android:id="@+id/tv_split_price_value"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{Integer.toString(article.splitPrice)}"
+            android:textColor="@color/black"
+            android:textSize="14sp"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/tv_split_price_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_metting_address"
+            tools:text="O,OOO" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="원"
+            android:textColor="@color/black"
+            android:textStyle="bold"
+            app:layout_constraintStart_toEndOf="@id/tv_split_price_value"
+            app:layout_constraintTop_toBottomOf="@id/tv_metting_address" />
+
+
+        <TextView
+            android:id="@+id/tv_recruitment_count_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="모집 인원: "
+            android:textColor="@color/black"
+            app:layout_constraintStart_toStartOf="@id/tv_deadline_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_split_price_label" />
+
+        <TextView
+            android:id="@+id/tv_total_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{Integer.toString(article.currentCount)}"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/tv_recruitment_count_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_split_price_label"
+            tools:text="1" />
+
+        <TextView
+            android:id="@+id/tv_count_label"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="명"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/tv_total_count"
+            app:layout_constraintTop_toBottomOf="@id/tv_split_price_label" />
+
+        <TextView
+            android:id="@+id/tv_slash"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@id/tv_count_label"
+            app:layout_constraintTop_toBottomOf="@id/tv_split_price_label" />
+
+        <TextView
+            android:id="@+id/tv_current_count"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@{Integer.toString(article.totalCount)}"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/tv_slash"
+            app:layout_constraintTop_toBottomOf="@id/tv_split_price_label"
+            tools:text="5" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="명"
+            android:textColor="@color/black"
+            app:layout_constraintStart_toEndOf="@+id/tv_current_count"
+            app:layout_constraintTop_toBottomOf="@id/tv_split_price_label" />
+
+        <ImageView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="6dp"
+            android:src="@drawable/split_line"
+            app:layout_constraintStart_toStartOf="@id/iv_product"
+            app:layout_constraintTop_toBottomOf="@id/iv_product" />
+
+        <View
+            android:layout_width="0dp"
+            android:layout_height="0dp"
+            android:background="#80000000"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
