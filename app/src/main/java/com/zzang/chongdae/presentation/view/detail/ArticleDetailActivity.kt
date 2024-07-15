@@ -36,18 +36,24 @@ class ArticleDetailActivity : AppCompatActivity() {
         binding.lifecycleOwner = this
     }
 
-    private fun obtainArticleId() = intent.getLongExtra(
-        EXTRA_ARTICLE_ID_KEY,
-        EXTRA_DEFAULT_VALUE,
-    )
+    private fun obtainArticleId() =
+        intent.getLongExtra(
+            EXTRA_ARTICLE_ID_KEY,
+            EXTRA_DEFAULT_VALUE,
+        )
 
     companion object {
         private const val EXTRA_DEFAULT_VALUE = -1L
         private const val EXTRA_ARTICLE_ID_KEY = "article_id_key"
-        fun makeIntentInstance(context: Context, articleId: Long): Intent {
-            val intent = Intent(context, ArticleDetailActivity::class.java).apply {
-                putExtra(EXTRA_ARTICLE_ID_KEY, articleId)
-            }
+
+        fun makeIntentInstance(
+            context: Context,
+            articleId: Long,
+        ): Intent {
+            val intent =
+                Intent(context, ArticleDetailActivity::class.java).apply {
+                    putExtra(EXTRA_ARTICLE_ID_KEY, articleId)
+                }
             return intent
         }
     }

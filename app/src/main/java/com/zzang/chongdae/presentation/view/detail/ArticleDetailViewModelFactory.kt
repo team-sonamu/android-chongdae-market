@@ -6,7 +6,7 @@ import com.zzang.chongdae.domain.repository.GroupPurchaseRepository
 
 class ArticleDetailViewModelFactory(
     private val articleId: Long,
-    private val groupPurchaseRepository: GroupPurchaseRepository
+    private val groupPurchaseRepository: GroupPurchaseRepository,
 ) : ViewModelProvider.Factory {
     override fun <T : ViewModel> create(modelClass: Class<T>): T {
         return ArticleDetailViewModel(
