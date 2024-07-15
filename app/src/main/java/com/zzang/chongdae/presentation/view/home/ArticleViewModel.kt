@@ -1,6 +1,5 @@
 package com.zzang.chongdae.presentation.view.home
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -13,7 +12,6 @@ class ArticleViewModel : ViewModel() {
     val articles: LiveData<List<Article>> get() = _articles
 
     fun updateArticles() {
-        Log.d("alsong", "updateArticles: ")
         _articles.value = articlesDummyData
     }
 
