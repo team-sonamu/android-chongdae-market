@@ -13,8 +13,6 @@ v
 Fapp/src/androidTest/java/com/zzang/chongdae/ExampleInstrumentedTest.kt,4/a/4a35e043baa8a5f72cd18cef7fdd529af14b4c95
 g
 7app/src/test/java/com/zzang/chongdae/ExampleUnitTest.kt,c/7/c7f79be0d36a25a0d0562d0eaa0042ea0f2f4ff0
-f
-6app/src/main/java/com/zzang/chongdae/ui/theme/Theme.kt,9/5/957ecfa50c7f3347b933d370ec036e9e02548a88
 A
 gradle.properties,2/a/2afbb999f001938c88fa43fc2ef52abf0f8213e4
 7
@@ -25,3 +23,15 @@ A
 local.properties,0/7/0712df971a99ac4d2fccb8e0fb19f377f3374cca
 >
 app/.gitignore,5/1/51e1c5d383dfaa35e0e7e5873a0a99355a86880f
+9
+	README.md,8/e/8ec9a00bfd09b3190ac6b22251dbb1aa95a0579d
+K
+app/src/main/ChongdaeApp.kt,9/6/965b72a59d3a3d0099d555b45390a674948416bd
+c
+3app/src/main/java/com/zzang/chongdae/ChongdaeApp.kt,6/6/6676cba1de158b441ef4e4ac91eb5386928f96b6
+v
+Fapp/src/main/java/com/zzang/chongdae/presentation/view/MainActivity.kt,1/d/1dc85cbcd65fbf4bca47a6de5d8bdeddd07c6a78
+l
+<app/src/main/java/com/zzang/chongdae/data/local/dao/.gitKeep,7/8/780ac1bdf4d4943589574eafa08081b95502a116
+n
+>app/src/main/java/com/zzang/chongdae/data/local/model/.gitKeep,0/e/0e63002e93965af41861f6becbc5b8968f443320
