@@ -8,6 +8,7 @@ import android.view.ViewGroup
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.viewModels
 import com.zzang.chongdae.databinding.FragmentHomeBinding
+import com.zzang.chongdae.presentation.view.detail.ArticleDetailActivity.Companion.makeIntentInstance
 import com.zzang.chongdae.presentation.view.home.adapter.ArticleAdapter
 import com.zzang.chongdae.presentation.view.home.adapter.OnArticleClickListener
 
@@ -36,5 +37,7 @@ class HomeFragment : Fragment(), OnArticleClickListener {
     }
 
     override fun onClick(articleId: Long) {
+        val intent = makeIntentInstance(activity as Context, articleId)
+        startActivity(intent)
     }
 }
