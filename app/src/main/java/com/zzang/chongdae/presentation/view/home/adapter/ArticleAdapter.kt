@@ -10,6 +10,7 @@ import com.zzang.chongdae.presentation.view.home.ArticleViewModel
 
 class ArticleAdapter(
     private val articleViewModel: ArticleViewModel,
+    private val onArticleClickListener: OnArticleClickListener,
 ) : ListAdapter<Article, ArticleViewHolder>(productComparator) {
     override fun onCreateViewHolder(
         parent: ViewGroup,
@@ -28,7 +29,7 @@ class ArticleAdapter(
         holder: ArticleViewHolder,
         position: Int,
     ) {
-        holder.bind(currentList[position], articleViewModel)
+        holder.bind(currentList[position], onArticleClickListener)
     }
 
     companion object {
