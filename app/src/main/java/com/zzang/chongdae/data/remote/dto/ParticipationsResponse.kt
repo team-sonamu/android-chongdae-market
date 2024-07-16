@@ -5,5 +5,6 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class ParticipationsResponse(
+    val status: PurchaseStatus,
     val currentCount: Int,
 )

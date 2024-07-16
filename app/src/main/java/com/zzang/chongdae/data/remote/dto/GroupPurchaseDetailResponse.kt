@@ -16,7 +16,7 @@ data class GroupPurchaseDetailResponse(
     val currentCount: Int,
     val totalCount: Int,
     val thumbnailUrl: String,
-    val splitPrice: Int,
+    val dividedPrice: Int,
     val totalPrice: Int,
     val status: PurchaseStatus,
 )

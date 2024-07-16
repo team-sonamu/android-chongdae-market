@@ -6,7 +6,7 @@ import com.zzang.chongdae.data.remote.dto.ParticipationsRequest
 import com.zzang.chongdae.data.remote.source.GroupPurchaseDataSource
 import com.zzang.chongdae.domain.model.Article
 import com.zzang.chongdae.domain.model.ArticleDetail
-import com.zzang.chongdae.domain.model.CurrentCount
+import com.zzang.chongdae.domain.model.Participation
 import com.zzang.chongdae.domain.repository.GroupPurchaseRepository
 
 class GroupPurchaseRepositoryImpl(
@@ -25,7 +25,7 @@ class GroupPurchaseRepositoryImpl(
         }
     }
 
-    override suspend fun participateGroupPurchase(articleId: Long): Result<CurrentCount> {
+    override suspend fun participateGroupPurchase(articleId: Long): Result<Participation> {
         return groupPurchaseDataSource.participateGroupPurchase(
             participationsRequest = ParticipationsRequest(articleId),
         ).mapCatching { it.toDomain() }

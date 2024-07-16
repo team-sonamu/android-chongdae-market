@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.zzang.chongdae.data.local.source.articlesDummyData
 import com.zzang.chongdae.domain.model.Article
 import com.zzang.chongdae.domain.repository.GroupPurchaseRepository
 import kotlinx.coroutines.launch
@@ -16,7 +17,7 @@ class ArticleViewModel(
     val articles: LiveData<List<Article>> get() = _articles
 
     fun updateArticles() {
-        viewModelScope.launch {
+        /*viewModelScope.launch {
             groupPurchaseRepository.getGroupPurchases().onSuccess {
                 Log.e("seogi",it.toString())
                 _articles.value = it
@@ -24,6 +25,7 @@ class ArticleViewModel(
                 Log.e("seogi",it.message.toString())
 
             }
-        }
+        }*/
+        _articles.value = articlesDummyData
     }
 }

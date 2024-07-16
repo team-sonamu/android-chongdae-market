@@ -3,6 +3,7 @@ package com.zzang.chongdae.presentation.view.detail
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
+import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -14,7 +15,9 @@ import com.zzang.chongdae.databinding.ActivityArticleDetailBinding
 
 class ArticleDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityArticleDetailBinding
-    private val articleId by lazy { obtainArticleId() }
+    private val articleId by lazy {
+        obtainArticleId()
+    }
     private val viewModel: ArticleDetailViewModel by viewModels {
         ArticleDetailViewModelFactory(
             articleId,

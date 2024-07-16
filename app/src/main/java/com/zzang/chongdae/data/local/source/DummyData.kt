@@ -6,7 +6,7 @@ import java.time.LocalDateTime
 val articlesDummyData =
     listOf(
         Article(
-            0,
+            1,
             "https://item.kakaocdn.net/do/9d272c87ee51db09570db3d980fc2a12ce9463e040a07a9462a54df43e1d73f1",
             LocalDateTime.now(),
             "공구해요",
