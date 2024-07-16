@@ -16,9 +16,9 @@ class ArticleAdapter(
 ) : ListAdapter<Article, ArticleViewHolder>(productComparator) {
     override fun getItemViewType(position: Int): Int {
         return if (currentList[position].isClosed == true) {
-            ArticleType.OPEN.separator
-        } else {
             ArticleType.CLOSE.separator
+        } else {
+            ArticleType.OPEN.separator
         }
     }
 
