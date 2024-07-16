@@ -17,15 +17,11 @@ class ArticleViewModel(
     val articles: LiveData<List<Article>> get() = _articles
 
     fun updateArticles() {
-        /*viewModelScope.launch {
+        viewModelScope.launch {
             groupPurchaseRepository.getGroupPurchases().onSuccess {
-                Log.e("seogi",it.toString())
                 _articles.value = it
             }.onFailure {
-                Log.e("seogi",it.message.toString())
-
             }
-        }*/
-        _articles.value = articlesDummyData
+        }
     }
 }

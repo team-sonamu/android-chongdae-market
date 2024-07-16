@@ -39,8 +39,13 @@ class HomeFragment : Fragment(), OnArticleClickListener {
         viewModel.articles.observe(viewLifecycleOwner) {
             articleAdapter.submitList(it)
         }
-        viewModel.updateArticles()
+
         return binding.root
+    }
+
+    override fun onStart() {
+        super.onStart()
+        viewModel.updateArticles()
     }
 
     override fun onClick(articleId: Long) {

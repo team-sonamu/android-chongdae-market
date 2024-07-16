@@ -109,13 +109,12 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_marginTop="18dp"
-                        android:autoLink="web"
+                        android:text="바로가기"
                         android:textColor="@color/main_color"
                         android:textSize="16sp"
                         android:textStyle="bold"
                         app:layout_constraintStart_toEndOf="@id/tv_product_link_comment"
-                        app:layout_constraintTop_toBottomOf="@id/tv_nickname"
-                        tools:text="바로가기" />
+                        app:layout_constraintTop_toBottomOf="@id/tv_nickname" />
 
                     <View
                         android:id="@+id/horizon_line"
@@ -309,13 +308,13 @@
             android:enabled="@{vm.isAvailable()}"
             android:onClick="@{() -> vm.onClickParticipantButton()}"
             android:textColor="@color/white"
+            app:currentCount="@{vm.currentCount}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:status="@{vm.articleStatus}"
-            app:currentCount="@{vm.currentCount}"
-            app:totalCount="@{vm.articleDetail.totalCount}"
             app:layout_constraintTop_toBottomOf="@id/sv_layout"
+            app:status="@{vm.articleStatus}"
+            app:totalCount="@{vm.articleDetail.totalCount}"
             tools:enabled="false"
             tools:text="참여하기(1/4)" />
 

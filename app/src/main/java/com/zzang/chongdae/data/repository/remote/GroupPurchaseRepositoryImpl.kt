@@ -1,8 +1,7 @@
 package com.zzang.chongdae.data.repository.remote
 
-import android.util.Log
 import com.zzang.chongdae.data.mapper.toDomain
-import com.zzang.chongdae.data.remote.dto.ParticipationsRequest
+import com.zzang.chongdae.data.remote.dto.ParticipationRequest
 import com.zzang.chongdae.data.remote.source.GroupPurchaseDataSource
 import com.zzang.chongdae.domain.model.Article
 import com.zzang.chongdae.domain.model.ArticleDetail
@@ -14,8 +13,7 @@ class GroupPurchaseRepositoryImpl(
 ) : GroupPurchaseRepository {
     override suspend fun getGroupPurchases(): Result<List<Article>> {
         return groupPurchaseDataSource.getGroupPurchases().mapCatching {
-            Log.e("seogi","repository : ${it}")
-            it.groupPurchases.map { it.toDomain() }
+            it.responses.map { it.toDomain() }
         }
     }
 
@@ -27,7 +25,7 @@ class GroupPurchaseRepositoryImpl(
 
     override suspend fun participateGroupPurchase(articleId: Long): Result<Participation> {
         return groupPurchaseDataSource.participateGroupPurchase(
-            participationsRequest = ParticipationsRequest(articleId),
+            participationRequest = ParticipationRequest(articleId),
         ).mapCatching { it.toDomain() }
     }
 }

@@ -5,6 +5,7 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
+import com.zzang.chongdae.data.local.source.articlesDummyData
 import com.zzang.chongdae.domain.model.Article
 import com.zzang.chongdae.domain.model.ArticleDetail
 import com.zzang.chongdae.domain.model.ArticleStatus
@@ -32,7 +33,7 @@ class ArticleDetailViewModel(
         loadArticle()
     }
 
-    private fun loadArticle() {
+    fun loadArticle() {
         viewModelScope.launch {
             groupPurchaseRepository.getGroupPurchaseDetail(articleId).onSuccess {
                 _articleDetail.value = it
@@ -46,5 +47,14 @@ class ArticleDetailViewModel(
     }
 
     override fun onClickParticipantButton() {
+        viewModelScope.launch {
+            groupPurchaseRepository.participateGroupPurchase(articleId).onSuccess {
+                _currentCount.value = it.currentCount.currentCount
+                _articleStatus.value = it.status
+                _isAvailable.value = it.status.isAvailable()
+            }.onFailure {
+                Log.e("Error", it.message.toString())
+            }
+        }
     }
 }

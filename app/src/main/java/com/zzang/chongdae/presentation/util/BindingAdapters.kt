@@ -22,7 +22,6 @@ fun TextView.bindStatusComment(
     totalCount: Int,
     status: ArticleStatus?,
 ) {
-    Log.e("seogi", "${currentCount} ${totalCount}, ${status}")
     this.text = status?.toComment(this.context, currentCount, totalCount)
 }
 
