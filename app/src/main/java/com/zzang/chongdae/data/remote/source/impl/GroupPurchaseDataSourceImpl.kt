@@ -1,5 +1,6 @@
 package com.zzang.chongdae.data.remote.source.impl
 
+import android.util.Log
 import com.zzang.chongdae.data.remote.api.GroupPurchaseApiService
 import com.zzang.chongdae.data.remote.dto.GroupPurchaseDetailResponse
 import com.zzang.chongdae.data.remote.dto.GroupPurchasesResponse

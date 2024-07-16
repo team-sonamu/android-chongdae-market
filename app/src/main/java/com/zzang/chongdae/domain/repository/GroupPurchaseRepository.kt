@@ -1,10 +1,11 @@
 package com.zzang.chongdae.domain.repository
 
+import com.zzang.chongdae.domain.model.Article
 import com.zzang.chongdae.domain.model.ArticleDetail
 import com.zzang.chongdae.domain.model.CurrentCount
 
 interface GroupPurchaseRepository {
-    suspend fun getGroupPurchases()
+    suspend fun getGroupPurchases(): Result<List<Article>>
 
     suspend fun getGroupPurchaseDetail(id: Long): Result<ArticleDetail>
 

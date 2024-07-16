@@ -5,5 +5,5 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class ParticipationsResponse(
-    @SerialName("currentCount") val currentCount: Int,
+    val currentCount: Int,
 )

@@ -19,7 +19,7 @@ class ArticleDetailActivity : AppCompatActivity() {
         ArticleDetailViewModelFactory(
             articleId,
             GroupPurchaseRepositoryImpl(
-                GroupPurchaseDataSourceImpl(NetworkManager.groupPurchaseService()),
+                GroupPurchaseDataSourceImpl(NetworkManager.service()),
             ),
         )
     }

@@ -5,13 +5,13 @@ import kotlinx.serialization.Serializable
 
 @Serializable
 data class GroupPurchase(
-    @SerialName("id") val id: Long,
-    @SerialName("title") val title: String,
-    @SerialName("meetingAddress") val meetingAddress: String,
-    @SerialName("deadline") val deadline: String,
-    @SerialName("currentCount") val currentCount: Int,
-    @SerialName("totalCount") val totalCount: Int,
-    @SerialName("thumbnailUrl") val thumbnailUrl: String,
-    @SerialName("splitPrice") val splitPrice: Int,
-    @SerialName("isClosed") val isClosed: Boolean,
+    val id: Long,
+    val title: String,
+    val meetingAddress: String,
+    val deadline: String,
+    val currentCount: Int,
+    val totalCount: Int,
+    val thumbnailUrl: String,
+    val splitPrice: Int,
+    val isClosed: Boolean,
 )
