@@ -13,9 +13,8 @@ import kotlinx.coroutines.launch
 
 class ArticleDetailViewModel(
     private val articleId: Long,
-    private val groupPurchaseRepository: GroupPurchaseRepository
+    private val groupPurchaseRepository: GroupPurchaseRepository,
 ) : ViewModel(), ParticipantClickListener {
-
     private val _articleDetail: MutableLiveData<ArticleDetail> = MutableLiveData()
     val articleDetail: LiveData<ArticleDetail> = _articleDetail
 

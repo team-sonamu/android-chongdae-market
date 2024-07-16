@@ -49,6 +49,10 @@ android {
     buildFeatures {
         dataBinding = true
     }
+
+    dataBinding {
+        enable = true
+    }
 }
 
 dependencies {
@@ -86,4 +90,13 @@ dependencies {
 
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.6.2")
     implementation("com.jakewharton.retrofit:retrofit2-kotlinx-serialization-converter:1.0.0")
+
+    kapt("com.github.bumptech.glide:compiler:4.13.2")
+
+    implementation("androidx.lifecycle:lifecycle-livedata-ktx:2.7.0")
+    implementation("androidx.lifecycle:lifecycle-viewmodel-ktx:2.7.0")
+    implementation("androidx.activity:activity-ktx:1.9.0")
+    implementation("androidx.fragment:fragment-ktx:1.7.0")
+    implementation("androidx.core:core-ktx:1.10.1")
+    implementation(libs.androidx.core.ktx)
 }

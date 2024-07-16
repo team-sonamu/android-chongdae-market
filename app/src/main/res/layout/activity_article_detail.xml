@@ -210,7 +210,7 @@
                         android:layout_height="wrap_content"
                         android:layout_marginStart="16dp"
                         android:layout_marginTop="8dp"
-                        app:bindDueDateTime = "@{vm.articleDetail.dueDateTime}"
+                        app:formattedDate = "@{vm.articleDetail.dueDateTime}"
                         android:textSize="14sp"
                         app:layout_constraintStart_toStartOf="parent"
                         app:layout_constraintTop_toBottomOf="@id/iv_time"

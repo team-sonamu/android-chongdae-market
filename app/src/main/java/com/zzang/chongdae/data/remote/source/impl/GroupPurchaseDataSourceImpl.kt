@@ -7,13 +7,13 @@ import com.zzang.chongdae.data.remote.dto.ParticipationsRequest
 import com.zzang.chongdae.data.remote.dto.ParticipationsResponse
 import com.zzang.chongdae.data.remote.source.GroupPurchaseDataSource
 
-class GroupPurchaseDataSourceImpl
-    (
+class GroupPurchaseDataSourceImpl(
     private val service: GroupPurchaseApiService,
 ) : GroupPurchaseDataSource {
-    override suspend fun getGroupPurchases(): Result<GroupPurchasesResponse> = runCatching {
-        service.getArticles().body() ?: throw IllegalStateException()
-    }
+    override suspend fun getGroupPurchases(): Result<GroupPurchasesResponse> =
+        runCatching {
+            service.getArticles().body() ?: throw IllegalStateException()
+        }
 
     override suspend fun getGroupPurchaseDetail(id: Long): Result<GroupPurchaseDetailResponse> =
         runCatching {

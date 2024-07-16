@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <item
+        android:id="@+id/chatting_fragment_item"
+        android:icon="@drawable/chatting_icon"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:title="채팅방"
+        tools:ignore="AlwaysShowAction"/>
+
+    <item
+        android:id="@+id/home_fragment_item"
+        android:icon="@drawable/home_icon"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:title="홈"
+        tools:ignore="AlwaysShowAction"/>
+
+    <item
+        android:id="@+id/my_page_fragment_item"
+        android:icon="@drawable/my_page_icon"
+        app:showAsAction="always"
+        android:enabled="true"
+        android:title="마이페이지"
+        tools:ignore="AlwaysShowAction"/>
+
+</menu>

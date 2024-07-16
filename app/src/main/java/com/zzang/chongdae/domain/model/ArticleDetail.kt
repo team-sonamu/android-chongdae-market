@@ -1,6 +1,5 @@
 package com.zzang.chongdae.domain.model
 
-import com.zzang.chongdae.data.remote.dto.PurchaseStatus
 import java.time.LocalDateTime
 
 data class ArticleDetail(

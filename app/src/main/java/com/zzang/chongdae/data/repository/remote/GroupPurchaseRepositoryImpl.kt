@@ -22,7 +22,7 @@ class GroupPurchaseRepositoryImpl(
 
     override suspend fun participateGroupPurchase(articleId: Long): Result<CurrentCount> {
         return groupPurchaseDataSource.participateGroupPurchase(
-            participationsRequest = ParticipationsRequest(articleId)
+            participationsRequest = ParticipationsRequest(articleId),
         ).mapCatching { it.toDomain() }
     }
 }

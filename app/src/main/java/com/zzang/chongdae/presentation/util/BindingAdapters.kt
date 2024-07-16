@@ -6,7 +6,6 @@ import android.widget.TextView
 import androidx.databinding.BindingAdapter
 import com.zzang.chongdae.R
 import com.zzang.chongdae.domain.model.ArticleStatus
-import java.time.LocalDate
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
 
@@ -22,18 +21,26 @@ fun TextView.bindDueDateTime(datetime: LocalDateTime) {
 }
 
 @BindingAdapter("currentCount", "totalCount", "status")
-fun TextView.bindStatusComment(currentCount: Int, totalCount: Int, status: ArticleStatus) {
+fun TextView.bindStatusComment(
+    currentCount: Int,
+    totalCount: Int,
+    status: ArticleStatus,
+) {
     this.text = status.toComment(this.context, currentCount, totalCount)
 }
 
-private fun ArticleStatus.toComment(context: Context, currentCount: Int, totalCount: Int) =
-    when (this) {
-        ArticleStatus.FULL -> context.getString(R.string.participant_full)
-        ArticleStatus.TIME_OUT -> context.getString(R.string.participant_end)
-        ArticleStatus.CONFIRMED -> context.getString(R.string.participant_end)
-        ArticleStatus.AVAILABLE -> context.getString(
+private fun ArticleStatus.toComment(
+    context: Context,
+    currentCount: Int,
+    totalCount: Int,
+) = when (this) {
+    ArticleStatus.FULL -> context.getString(R.string.participant_full)
+    ArticleStatus.TIME_OUT -> context.getString(R.string.participant_end)
+    ArticleStatus.CONFIRMED -> context.getString(R.string.participant_end)
+    ArticleStatus.AVAILABLE ->
+        context.getString(
             R.string.participant_count,
             currentCount,
-            totalCount
+            totalCount,
         )
-    }
+}

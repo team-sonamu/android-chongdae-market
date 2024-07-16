@@ -1,6 +1,5 @@
 package com.zzang.chongdae.domain.model
 
-
 enum class ArticleStatus {
     FULL,
     TIME_OUT,
