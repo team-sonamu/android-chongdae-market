@@ -36,7 +36,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="0dp"
                     android:scaleType="centerCrop"
-
+                    app:imageUrl="@{vm.articleDetail.thumbnailUrl}"
                     app:layout_constraintDimensionRatio="360:240"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintStart_toStartOf="parent"
@@ -312,10 +312,10 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@id/sv_layout"
             app:status="@{vm.articleStatus}"
             app:currentCount="@{vm.currentCount}"
             app:totalCount="@{vm.articleDetail.totalCount}"
+            app:layout_constraintTop_toBottomOf="@id/sv_layout"
             tools:enabled="false"
             tools:text="참여하기(1/4)" />
 

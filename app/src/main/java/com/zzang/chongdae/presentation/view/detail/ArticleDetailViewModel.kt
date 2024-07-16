@@ -34,7 +34,6 @@ class ArticleDetailViewModel(
     private fun loadArticle() {
         viewModelScope.launch {
             groupPurchaseRepository.getGroupPurchaseDetail(articleId).onSuccess {
-                Log.e("seogi","detail :${it}")
                 _articleDetail.value = it
                 _currentCount.value = it.currentCount.currentCount
                 _articleStatus.value = it.status
@@ -48,6 +47,7 @@ class ArticleDetailViewModel(
     override fun onClickParticipantButton() {
         viewModelScope.launch {
             groupPurchaseRepository.participateGroupPurchase(articleId).onSuccess {
+                Log.e("seogi","detail :${it}")
                 _currentCount.value = it.currentCount.currentCount
                 _articleStatus.value = it.status
                 _isAvailable.value = it.status.isAvailable()

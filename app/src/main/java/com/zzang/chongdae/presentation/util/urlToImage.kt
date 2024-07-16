@@ -6,7 +6,7 @@ import com.bumptech.glide.Glide
 
 fun ImageView.urlToImage(
     context: Context,
-    imageUrl: String?,
+    imageUrl: String,
 ) {
     imageUrl?.let { url ->
         Glide.with(context)
