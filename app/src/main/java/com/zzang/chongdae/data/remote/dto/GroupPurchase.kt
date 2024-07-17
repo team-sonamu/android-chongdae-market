@@ -12,6 +12,6 @@ data class GroupPurchase(
     @SerialName("currentCount") val currentCount: Int,
     @SerialName("totalCount") val totalCount: Int,
     @SerialName("thumbnailUrl") val thumbnailUrl: String,
-    @SerialName("splitPrice") val splitPrice: Int,
+    @SerialName("dividedPrice") val dividedPrice: Int,
     @SerialName("isClosed") val isClosed: Boolean,
 )

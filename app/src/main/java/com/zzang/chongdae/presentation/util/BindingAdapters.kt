@@ -1,6 +1,7 @@
 package com.zzang.chongdae.presentation.util
 
 import android.content.Context
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
@@ -8,11 +9,6 @@ import com.zzang.chongdae.R
 import com.zzang.chongdae.domain.model.ArticleStatus
 import java.time.LocalDateTime
 import java.time.format.DateTimeFormatter
-
-@BindingAdapter("imageUrl")
-fun ImageView.bindUrlToImage(imageUrl: String?) {
-    urlToImage(context, imageUrl)
-}
 
 @BindingAdapter("dueDateTime")
 fun TextView.bindDueDateTime(datetime: LocalDateTime) {
@@ -24,9 +20,9 @@ fun TextView.bindDueDateTime(datetime: LocalDateTime) {
 fun TextView.bindStatusComment(
     currentCount: Int,
     totalCount: Int,
-    status: ArticleStatus,
+    status: ArticleStatus?,
 ) {
-    this.text = status.toComment(this.context, currentCount, totalCount)
+    this.text = status?.toComment(this.context, currentCount, totalCount)
 }
 
 private fun ArticleStatus.toComment(

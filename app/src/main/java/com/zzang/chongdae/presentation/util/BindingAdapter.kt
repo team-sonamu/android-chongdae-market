@@ -1,5 +1,6 @@
 package com.zzang.chongdae.presentation.util
 
+import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
@@ -12,11 +13,13 @@ object BindingAdapter {
     @JvmStatic
     fun setImageResource(
         view: ImageView,
-        imageUrl: String,
+        imageUrl: String?,
     ) {
-        Glide.with(view.context)
-            .load(imageUrl)
-            .into(view)
+        imageUrl.let {
+            Glide.with(view.context)
+                .load(it)
+                .into(view)
+        }
     }
 
     @JvmStatic

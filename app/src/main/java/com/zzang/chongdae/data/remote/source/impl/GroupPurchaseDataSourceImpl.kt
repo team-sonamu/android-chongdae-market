@@ -3,8 +3,8 @@ package com.zzang.chongdae.data.remote.source.impl
 import com.zzang.chongdae.data.remote.api.GroupPurchaseApiService
 import com.zzang.chongdae.data.remote.dto.GroupPurchaseDetailResponse
 import com.zzang.chongdae.data.remote.dto.GroupPurchasesResponse
-import com.zzang.chongdae.data.remote.dto.ParticipationsRequest
-import com.zzang.chongdae.data.remote.dto.ParticipationsResponse
+import com.zzang.chongdae.data.remote.dto.ParticipationRequest
+import com.zzang.chongdae.data.remote.dto.ParticipationResponse
 import com.zzang.chongdae.data.remote.source.GroupPurchaseDataSource
 
 class GroupPurchaseDataSourceImpl(
@@ -20,9 +20,9 @@ class GroupPurchaseDataSourceImpl(
             service.getArticleDetail(id = id).body() ?: throw IllegalStateException()
         }
 
-    override suspend fun participateGroupPurchase(participationsRequest: ParticipationsRequest): Result<ParticipationsResponse> =
+    override suspend fun participateGroupPurchase(participationRequest: ParticipationRequest): Result<ParticipationResponse> =
         runCatching {
-            service.postParticipations(participationsRequest = participationsRequest)
+            service.postParticipation(participationRequest = participationRequest)
                 .body() ?: throw IllegalStateException()
         }
 }

@@ -1,17 +1,20 @@
 package com.zzang.chongdae.data.repository.remote
 
 import com.zzang.chongdae.data.mapper.toDomain
-import com.zzang.chongdae.data.remote.dto.ParticipationsRequest
+import com.zzang.chongdae.data.remote.dto.ParticipationRequest
 import com.zzang.chongdae.data.remote.source.GroupPurchaseDataSource
+import com.zzang.chongdae.domain.model.Article
 import com.zzang.chongdae.domain.model.ArticleDetail
-import com.zzang.chongdae.domain.model.CurrentCount
+import com.zzang.chongdae.domain.model.Participation
 import com.zzang.chongdae.domain.repository.GroupPurchaseRepository
 
 class GroupPurchaseRepositoryImpl(
     private val groupPurchaseDataSource: GroupPurchaseDataSource,
 ) : GroupPurchaseRepository {
-    override suspend fun getGroupPurchases() {
-        TODO("Not yet implemented")
+    override suspend fun getGroupPurchases(): Result<List<Article>> {
+        return groupPurchaseDataSource.getGroupPurchases().mapCatching {
+            it.responses.map { it.toDomain() }
+        }
     }
 
     override suspend fun getGroupPurchaseDetail(id: Long): Result<ArticleDetail> {
@@ -20,9 +23,9 @@ class GroupPurchaseRepositoryImpl(
         }
     }
 
-    override suspend fun participateGroupPurchase(articleId: Long): Result<CurrentCount> {
+    override suspend fun participateGroupPurchase(articleId: Long): Result<Participation> {
         return groupPurchaseDataSource.participateGroupPurchase(
-            participationsRequest = ParticipationsRequest(articleId),
+            participationRequest = ParticipationRequest(articleId),
         ).mapCatching { it.toDomain() }
     }
 }

@@ -1,9 +1,9 @@
 package com.zzang.chongdae.data.remote.dto
 
-
 import kotlinx.serialization.Serializable
 
 @Serializable
-data class GroupPurchasesResponse(
-    val responses: List<GroupPurchase>,
+data class ParticipationResponse(
+    val currentCount: Int,
+    val status: PurchaseStatus,
 )

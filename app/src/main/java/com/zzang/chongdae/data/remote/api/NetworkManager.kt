@@ -9,8 +9,7 @@ import retrofit2.Retrofit
 object NetworkManager {
     private var instance: Retrofit? = null
 
-    /** TODO: server IP address 추가 예정 */
-    private const val BASE_URL = "http://"
+    private const val BASE_URL = "http://fromitive.iptime.org"
 
     private val json =
         Json {
@@ -34,5 +33,6 @@ object NetworkManager {
         return instance!!
     }
 
-    fun groupPurchaseService(): GroupPurchaseApiService = getRetrofit().create(GroupPurchaseApiService::class.java)
+    fun service(): GroupPurchaseApiService =
+        getRetrofit().create(GroupPurchaseApiService::class.java)
 }

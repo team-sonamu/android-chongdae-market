@@ -15,10 +15,10 @@ class ArticleAdapter(
     private val onArticleClickListener: OnArticleClickListener,
 ) : ListAdapter<Article, ArticleViewHolder>(productComparator) {
     override fun getItemViewType(position: Int): Int {
-        return if (currentList[position].isOpened == true) {
-            ArticleType.OPEN.separator
-        } else {
+        return if (currentList[position].isClosed == true) {
             ArticleType.CLOSE.separator
+        } else {
+            ArticleType.OPEN.separator
         }
     }
 
