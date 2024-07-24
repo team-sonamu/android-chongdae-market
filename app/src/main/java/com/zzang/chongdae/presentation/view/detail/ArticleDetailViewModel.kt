@@ -5,8 +5,6 @@ import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.zzang.chongdae.data.local.source.articlesDummyData
-import com.zzang.chongdae.domain.model.Article
 import com.zzang.chongdae.domain.model.ArticleDetail
 import com.zzang.chongdae.domain.model.ArticleStatus
 import com.zzang.chongdae.domain.model.ArticleStatus.Companion.isAvailable
