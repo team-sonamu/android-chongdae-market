@@ -26,7 +26,7 @@ class HomeFragment : Fragment(), OnArticleClickListener {
         )
     }
 
-// hihi
+    // hihi
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,
