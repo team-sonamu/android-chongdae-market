@@ -1,6 +1,5 @@
 package com.zzang.chongdae.data.remote.dto
 
-
 import kotlinx.serialization.Serializable
 
 @Serializable

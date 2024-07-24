@@ -22,10 +22,11 @@ class HomeFragment : Fragment(), OnArticleClickListener {
         ArticleViewModelFactory(
             GroupPurchaseRepositoryImpl(
                 GroupPurchaseDataSourceImpl(NetworkManager.service()),
-            )
+            ),
         )
     }
-//hihi
+
+// hihi
     override fun onCreateView(
         inflater: LayoutInflater,
         container: ViewGroup?,

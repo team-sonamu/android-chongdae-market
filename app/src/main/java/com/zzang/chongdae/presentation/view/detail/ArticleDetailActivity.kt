@@ -2,10 +2,7 @@ package com.zzang.chongdae.presentation.view.detail
 
 import android.content.Context
 import android.content.Intent
-import android.net.Uri
 import android.os.Bundle
-import android.text.util.Linkify
-import android.util.Log
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
 import androidx.databinding.DataBindingUtil
@@ -14,7 +11,6 @@ import com.zzang.chongdae.data.remote.api.NetworkManager
 import com.zzang.chongdae.data.remote.source.impl.GroupPurchaseDataSourceImpl
 import com.zzang.chongdae.data.repository.remote.GroupPurchaseRepositoryImpl
 import com.zzang.chongdae.databinding.ActivityArticleDetailBinding
-import java.util.regex.Pattern
 
 class ArticleDetailActivity : AppCompatActivity() {
     private lateinit var binding: ActivityArticleDetailBinding

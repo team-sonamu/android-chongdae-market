@@ -1,6 +1,5 @@
 package com.zzang.chongdae.presentation.util
 
-import android.util.Log
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.databinding.BindingAdapter
