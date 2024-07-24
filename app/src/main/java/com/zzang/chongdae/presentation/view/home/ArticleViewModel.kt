@@ -1,11 +1,9 @@
 package com.zzang.chongdae.presentation.view.home
 
-import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
-import com.zzang.chongdae.data.local.source.articlesDummyData
 import com.zzang.chongdae.domain.model.Article
 import com.zzang.chongdae.domain.repository.GroupPurchaseRepository
 import kotlinx.coroutines.launch

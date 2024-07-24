@@ -22,7 +22,7 @@ class HomeFragment : Fragment(), OnArticleClickListener {
         ArticleViewModelFactory(
             GroupPurchaseRepositoryImpl(
                 GroupPurchaseDataSourceImpl(NetworkManager.service()),
-            )
+            ),
         )
     }
 
