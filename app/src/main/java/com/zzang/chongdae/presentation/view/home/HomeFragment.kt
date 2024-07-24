@@ -40,4 +40,6 @@ class HomeFragment : Fragment(), OnArticleClickListener {
         val intent = makeIntentInstance(activity as Context, articleId)
         startActivity(intent)
     }
+
+    //hihihihi~~~~~~~~
 }
