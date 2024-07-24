@@ -37,8 +37,8 @@ jobs:
     - name: Run Android Test
       uses: reactivecircus/android-emulator-runner@v2
       with:
-       api-level: 33
+       api-level: 34
        target: default
        arch: x86
-       profile: Pixel_4
+       profile: Pixel_5
        script: ./gradlew connectedCheck --stacktrace
