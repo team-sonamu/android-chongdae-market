@@ -41,5 +41,5 @@ class HomeFragment : Fragment(), OnArticleClickListener {
         startActivity(intent)
     }
 
-    //hihihihi~~~~~~~~!!!!!
+    // hihihihi~~~~~~~~!!!!!
 }

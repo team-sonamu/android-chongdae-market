@@ -4,7 +4,7 @@ import android.content.Context
 import android.widget.ImageView
 import com.bumptech.glide.Glide
 
-fun ImageView.urlToImage(
+fun ImageView.urlToImage2gi(
     context: Context,
     imageUrl: String?,
 ) {
@@ -14,3 +14,4 @@ fun ImageView.urlToImage(
             .into(this)
     }
 }
+//안녕ㅇ애들아

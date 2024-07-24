@@ -11,7 +11,7 @@ import java.time.format.DateTimeFormatter
 
 @BindingAdapter("imageUrl")
 fun ImageView.bindUrlToImage(imageUrl: String?) {
-    urlToImage(context, imageUrl)
+    urlToImage2(context, imageUrl)
 }
 
 @BindingAdapter("dueDateTime")
